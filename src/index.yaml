@@ -1,0 +1,10 @@
+config:
+  target: https://google.com
+  processor: "./index.ts"
+  phases:
+    - duration: 1
+      arrivalRate: 1
+scenarios:
+  - name: "test"
+    flow:
+      - function: "sendRequest"

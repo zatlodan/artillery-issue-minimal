@@ -1,0 +1,17 @@
+{
+  "name": "artillery-repro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "run:cloud": "docker run --env-file=.env -v $(pwd):/workspace artilleryio/artillery:latest run-fargate --region eu-west-1 --count 1 /workspace/src/index.yaml",
+    "run:local": "docker run -v $(pwd):/workspace artilleryio/artillery:latest run /workspace/src/index.yaml"
+  },
+  "devDependencies": {
+    "@types/artillery": "^1.7.4",
+    "@types/ramda": "^0.30.2"
+  },
+  "dependencies": {
+    "ramda": "^0.30.1"
+  }
+}
